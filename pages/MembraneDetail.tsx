@@ -1,8 +1,19 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 
 const MembraneDetail: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const intro = [
+    "膜制备物可用于研究膜蛋白在疾病发生发展中的作用，以及其对治疗性药物的响应。Eurofins DiscoverX® 提供的 GPCR 和离子通道膜制备物来源于稳定细胞系，这些细胞系经过优化以表达适合检测的目标蛋白水平。",
+    "该类产品专为通过饱和结合实验和竞争性放射性配体结合实验测定膜蛋白结合亲和力而设计，可用于小分子或蛋白类治疗药物的筛选与排序（rank ordering）。对于 GPCR，这些膜制备物还可用于开展 GTPγS 功能实验，以评估在加入配体或候选药物后 GPCR 的活性变化。",
+    "使用 Eurofins DiscoverX 的纯化膜制备物，可获得高度灵敏且具有良好重复性的实验数据，结果可靠、可验证。"
+  ];
+
+  const highlights = [
+    "性能稳健 —— 高信噪比，具备特异性且高容量的配体结合能力",
+    "高重复性 —— 来源于稳定克隆细胞系，保证蛋白表达水平稳定及批次间一致性",
+    "操作简便 —— 无需进行细胞培养",
+    "用途广泛 —— 适用于饱和与竞争性放射性配体结合实验、小分子及抗体药物的筛选与排序，以及 GTPγS 功能研究"
+  ];
 
   const ionChannelMembranes = [
     { target: 'hERG', moa: 'Ion Channel', cat: 'CYL4039', desc: 'PrecisION® Recombinant hERG Potassium Ion Channel Membrane Preparation' },
@@ -123,37 +134,61 @@ const MembraneDetail: React.FC = () => {
     { target: 'VIPR2', moa: 'cAMP & Calcium', cat: 'HTS079M', desc: 'ChemiScreen VPAC2 Receptor Membrane Preparation' },
   ];
 
-  const filteredGpcrs = gpcrMembranes.filter(item => 
-    item.target.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    item.cat.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
     <div className="bg-white">
       {/* 1. Introduction Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
-            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">膜制品 (Membrane Preparations)</h1>
+            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-2">膜制备物</h1>
+            <h2 className="text-xl font-bold text-[#4B827E] mb-6">用于结合与功能分析的纯化 GPCR 与离子通道膜蛋白制备物</h2>
             <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
-            <p className="text-slate-600 leading-relaxed text-lg mb-6">
-              ChemiScreen™ 膜制品是由稳定表达特定生物靶点（如 GPCR 或离子通道）的工程化细胞株提取的高质量纯化膜。这些制品在膜表面保留了高密度的靶点蛋白，并处于功能活跃状态。
-            </p>
-            <p className="text-slate-600 leading-relaxed text-lg">
-              膜制品是研究放射性配体结合实验 (Radioligand Binding)、GTPγS 结合实验以及基于构象改变的生化分析的理想工具。它们为药物初筛及亲和力验证提供了一致且可靠的底物，极大地简化了实验准备流程。
-            </p>
+            {intro.map((paragraph, idx) => (
+              <p key={idx} className="text-slate-600 leading-relaxed text-lg mb-6">
+                {paragraph}
+              </p>
+            ))}
           </div>
           <div className="md:w-1/2">
             <img 
-              src="https://picsum.photos/seed/membrane_science/800/600" 
-              alt="Membrane Preparation Technology" 
-              className="rounded-2xl shadow-2xl border border-slate-100"
+              src="https://picsum.photos/seed/gtp-binding-assay/800/400" 
+              alt="GTPγS Binding Assay Schematic" 
+              className="rounded-2xl shadow-2xl border border-slate-100 w-full h-auto"
             />
+            <p className="text-[10px] text-slate-400 mt-3 text-center uppercase font-bold tracking-widest">
+              GTPγS 结合实验原理示意图
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 2. MOA Section */}
+      {/* 2. Highlights Section */}
+      <section className="bg-white py-16 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">产品亮点 (Product Highlights)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {highlights.map((highlight, idx) => {
+              const [title, ...descParts] = highlight.split(' —— ');
+              const description = descParts.join(' —— ');
+              return (
+                <div key={idx} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div className="w-10 h-10 rounded-lg bg-[#4B827E]/10 flex items-center justify-center text-[#4B827E] mb-6">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1C2C5E] mb-4">{title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm">
+                    {description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. MOA Section */}
       <section className="bg-slate-50 py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">作用机制与技术规格</h2>
@@ -185,32 +220,30 @@ const MembraneDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Product List Table Section */}
+      {/* 4. Product List Table Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12 text-center md:text-left">膜制品产品列表 / Membrane Portfolio</h2>
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12 text-center md:text-left">膜制品产品列表</h2>
         
         {/* Ion Channel Section */}
-        <div className="mb-16 overflow-hidden shadow-xl rounded-xl border border-slate-200">
-          <div className="bg-[#4B827E] px-6 py-4 flex justify-between items-center">
-            <h3 className="text-lg font-bold text-white uppercase tracking-wider">离子通道膜制品 / Ion Channel Membrane Preparations</h3>
-          </div>
-          <div className="overflow-x-auto">
+        <div className="mb-16 w-full">
+          <div className="w-full overflow-x-auto shadow-xl rounded-xl border border-slate-200">
+            <div className="bg-[#4B827E] px-6 py-4 flex justify-between items-center">
+              <h3 className="text-lg font-bold text-white uppercase tracking-wider">离子通道膜制品</h3>
+            </div>
             <table className="min-w-full divide-y divide-slate-200">
               <thead className="bg-slate-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Target</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">MOA</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Cat No.</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Description</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">靶点</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">作用机制</th>
+                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">货号</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-slate-100">
                 {ionChannelMembranes.map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E]">{row.target}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{row.moa}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-50">{row.target}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 border-r border-slate-50">{row.moa}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-mono text-slate-600">{row.cat}</td>
-                    <td className="px-6 py-4 text-sm text-slate-600">{row.desc}</td>
                   </tr>
                 ))}
               </tbody>
@@ -219,47 +252,32 @@ const MembraneDetail: React.FC = () => {
         </div>
 
         {/* GPCR Section */}
-        <div className="overflow-hidden shadow-xl rounded-xl border border-slate-200">
-          <div className="bg-[#4B827E] px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <h3 className="text-lg font-bold text-white uppercase tracking-wider">GPCR 膜制品 / GPCR Membrane Preparations</h3>
-            <div className="relative w-full md:w-64">
-              <input 
-                type="text" 
-                placeholder="搜索靶点或货号..." 
-                className="w-full pl-8 pr-4 py-1.5 text-xs rounded-full border-none focus:ring-2 focus:ring-white/50"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+        <div className="w-full">
+          <div className="w-full shadow-xl rounded-xl border border-slate-200 overflow-hidden">
+            <div className="bg-[#4B827E] px-6 py-4">
+              <h3 className="text-lg font-bold text-white uppercase tracking-wider">GPCR 膜制品</h3>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-slate-200">
+                <thead className="bg-slate-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">靶点</th>
+                    <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">作用机制</th>
+                    <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">货号</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-slate-100">
+                  {gpcrMembranes.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-50">{row.target}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 border-r border-slate-50">{row.moa}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-mono text-slate-600">{row.cat}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
-          <div className="overflow-x-auto max-h-[800px]">
-            <table className="min-w-full divide-y divide-slate-200">
-              <thead className="bg-slate-50 sticky top-0 z-20">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-50 shadow-sm">Target</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-50 shadow-sm">MOA</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-50 shadow-sm">Cat No.</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-50 shadow-sm">Description</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-slate-100">
-                {filteredGpcrs.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E]">{row.target}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{row.moa}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-mono text-slate-600">{row.cat}</td>
-                    <td className="px-6 py-4 text-sm text-slate-600">{row.desc}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          {filteredGpcrs.length === 0 && (
-            <div className="p-12 text-center text-slate-400">未找到相关膜制品，请尝试其他关键词。</div>
-          )}
         </div>
 
         <div className="mt-12 text-center">

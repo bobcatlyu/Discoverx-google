@@ -98,7 +98,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
       {/* 3. Product Formats */}
       <section className="bg-slate-50 py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-[#1C2C5E] mb-12 text-center underline decoration-[#4B827E] decoration-4 underline-offset-8 uppercase tracking-widest">产品供应形式</h2>
+          <h2 className="text-3xl font-black text-[#1C2C5E] mb-12 text-center underline decoration-[#4B827E] decoration-4 underline-offset-8 uppercase tracking-widest">产品形式</h2>
           <div className="space-y-6 max-w-5xl mx-auto">
             {/* Format 1 - Updated with multiline list */}
             <div className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col md:flex-row gap-10 items-start group hover:border-[#4B827E] transition-all">
@@ -140,16 +140,16 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
             <div className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col md:flex-row gap-10 items-center group hover:border-[#4B827E] transition-all">
               <div className="w-20 h-20 bg-[#4B827E] text-white rounded-3xl flex items-center justify-center font-black text-3xl shrink-0 shadow-lg group-hover:scale-105 transition-transform">02</div>
               <div>
-                <h4 className="text-xl font-bold text-[#1C2C5E] mb-2">可传代稳转细胞系 (Standalone Cell Lines)</h4>
+                <h4 className="text-xl font-bold text-[#1C2C5E] mb-2">可传代稳转细胞系</h4>
                 <p className="text-sm text-slate-500 leading-relaxed">独立的、非套装形式供应。主要涵盖离子通道细胞系、钙离子检测细胞系、DIY 用亲本细胞（表达 EA 或 NUC 标签）以及特定原代细胞系。</p>
               </div>
             </div>
             {/* Format 3 */}
             <div className="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col md:flex-row gap-10 items-center group hover:border-[#4B827E] transition-all">
-              <div className="w-20 h-20 bg-slate-200 text-[#4B827E] rounded-3xl flex items-center justify-center font-black text-3xl shrink-0 shadow-lg group-hover:scale-105 transition-transform">03</div>
+              <div className="w-20 h-20 bg-[#4B827E] text-white rounded-3xl flex items-center justify-center font-black text-3xl shrink-0 shadow-lg group-hover:scale-105 transition-transform">03</div>
               <div>
-                <h4 className="text-xl font-bold text-[#1C2C5E] mb-2">冻存即用型检测细胞 (Frozen Ready-to-Assay)</h4>
-                <p className="text-sm text-slate-500 leading-relaxed"><span className="text-red-600 font-bold">不可传代。</span> 仅针对钙离子检测细胞系提供。旨在消除由于长期细胞传代带来的生物学变异，解冻后直接铺板，适合 HTS 极速应用。</p>
+                <h4 className="text-xl font-bold text-[#1C2C5E] mb-2">即用型冻存细胞</h4>
+                <p className="text-sm text-slate-500 leading-relaxed">不可传代。 仅针对钙离子检测细胞系提供。旨在消除由于长期细胞传代带来的生物学变异，解冻后直接铺板，适合 HTS 极速应用。</p>
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
       {/* 4. Core Technology & Applications - VERTICAL FULL STACK with Theme Green Headers */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="mb-20 text-center">
-          <h2 className="text-4xl font-black text-[#1C2C5E] mb-4">核心技术平台与检测应用</h2>
+          <h2 className="text-4xl font-black text-[#1C2C5E] mb-4">细胞系靶点和应用</h2>
           <p className="text-slate-500 text-lg">按照不同靶点类别详细列出所有检测应用形式，无合并与省略</p>
           <div className="h-1.5 w-40 bg-[#4B827E] mx-auto mt-6"></div>
         </div>
@@ -169,7 +169,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
           <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl">
             <div className="bg-[#4B827E] p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-3xl font-black mb-2">1. GPCR 细胞系检测应用</h3>
+                <h3 className="text-3xl font-black mb-2">1. GPCR 检测细胞系</h3>
                 <p className="opacity-90 font-medium">涵盖已知 GPCRome 的全方位功能检测方案</p>
               </div>
               <button onClick={() => navigateTo(Page.Gpcr)} className="bg-white text-[#4B827E] px-8 py-3 rounded-full font-bold transition-all hover:bg-teal-50 shadow-xl">进入 GPCR 目录</button>
@@ -197,7 +197,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
           <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl">
             <div className="bg-[#4B827E] p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-3xl font-black mb-2">2. 激酶受体RTK 细胞系检测应用</h3>
+                <h3 className="text-3xl font-black mb-2">2. 激酶受体RTK 检测细胞系</h3>
                 <p className="opacity-90 font-medium">评估激酶活化、招募与内源性降解</p>
               </div>
               <button onClick={() => navigateTo(Page.KinaseReceptors)} className="bg-white text-[#4B827E] px-8 py-3 rounded-full font-bold transition-all hover:bg-teal-50 shadow-xl">进入激酶受体RTK目录</button>
@@ -222,54 +222,63 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Card 3: Checkpoint & Card 4: Cytokine (Side by Side) */}
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-xl bg-white">
-              <div className="bg-[#4B827E] p-8 text-white">
-                <h3 className="text-2xl font-black mb-1">3. 免疫检查点应用</h3>
-                <p className="text-xs opacity-80">肿瘤免疫创新药评估</p>
+          {/* Card 3: Checkpoint */}
+          <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl">
+            <div className="bg-[#4B827E] p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-3xl font-black mb-2">3. 免疫检查点检测细胞系</h3>
+                <p className="opacity-90 font-medium">肿瘤免疫创新药评估</p>
               </div>
-              <div className="p-8 space-y-6">
-                {[
-                  { n: '受体信号分析', d: '量化检查点分子介导的抑制或共刺激信号强度。' },
-                  { n: '受体二聚化分析', d: '直接监测单抗或双抗诱导的受体组装。' },
-                  { n: '受体内化分析', d: 'ADC 药物筛选及抗体诱导受体降解效率评价。' },
-                  { n: 'KILR® 受体细胞毒性', d: '高效测定 ADCC/ADCP 及免疫杀伤效率。' }
-                ].map((item, i) => (
-                  <div key={i} className="group">
-                    <h6 className="font-bold text-[#1C2C5E] mb-1 group-hover:text-[#4B827E] transition-colors">{item.n}</h6>
-                    <p className="text-[11px] text-slate-500 leading-relaxed">{item.d}</p>
-                  </div>
-                ))}
-                <button onClick={() => navigateTo(Page.CheckpointReceptors)} className="text-[#4B827E] font-black text-xs uppercase tracking-widest hover:underline">查看完整检查点目录 →</button>
-              </div>
+              <button onClick={() => navigateTo(Page.CheckpointReceptors)} className="bg-white text-[#4B827E] px-8 py-3 rounded-full font-bold transition-all hover:bg-teal-50 shadow-xl">进入免疫检查点目录</button>
             </div>
-
-            <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-xl bg-white">
-              <div className="bg-[#4B827E] p-8 text-white">
-                <h3 className="text-2xl font-black mb-1">4. 细胞因子受体应用</h3>
-                <p className="text-xs opacity-80">炎症与免疫调控分析</p>
-              </div>
-              <div className="p-8 space-y-6">
-                {[
-                  { n: '受体二聚化分析', d: '同源或异源受体（如 IL-2R, IL-6R）二聚化状态监测。' },
-                  { n: '信号通路 IkB 降解', d: '实时监测 NF-kB 通路起始阶段的蛋白稳定性变化。' },
-                  { n: '信号通路报告基因法', d: 'STAT1/3/5 等下游转录因子的多重监测。' }
-                ].map((item, i) => (
-                  <div key={i} className="group">
-                    <h6 className="font-bold text-[#1C2C5E] mb-1 group-hover:text-[#4B827E] transition-colors">{item.n}</h6>
-                    <p className="text-[11px] text-slate-500 leading-relaxed">{item.d}</p>
+            <div className="p-10 bg-white grid md:grid-cols-2 gap-10">
+              {[
+                { n: '受体信号分析', d: '量化检查点分子介导的抑制或共刺激信号强度。' },
+                { n: '受体二聚化分析', d: '直接监测单抗或双抗诱导的受体组装。' },
+                { n: '受体内化分析', d: 'ADC 药物筛选及抗体诱导受体降解效率评价。' },
+                { n: 'KILR® 受体细胞毒性', d: '高效测定 ADCC/ADCP 及免疫杀伤效率。' }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 group">
+                  <div className="shrink-0 w-12 h-12 bg-teal-50 text-[#4B827E] rounded-2xl flex items-center justify-center font-black group-hover:bg-[#4B827E] group-hover:text-white transition-all shadow-sm">{i+1}</div>
+                  <div>
+                    <h5 className="font-bold text-[#1C2C5E] text-lg mb-2">{item.n}</h5>
+                    <p className="text-sm text-slate-500 leading-relaxed">{item.d}</p>
                   </div>
-                ))}
-                <button onClick={() => navigateTo(Page.CytokineReceptors)} className="text-[#4B827E] font-black text-xs uppercase tracking-widest hover:underline">查看完整细胞因子目录 →</button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Card 4: Cytokine */}
+          <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl">
+            <div className="bg-[#4B827E] p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-3xl font-black mb-2">4. 细胞因子受体检测细胞系</h3>
+                <p className="opacity-90 font-medium">炎症与免疫调控分析</p>
               </div>
+              <button onClick={() => navigateTo(Page.CytokineReceptors)} className="bg-white text-[#4B827E] px-8 py-3 rounded-full font-bold transition-all hover:bg-teal-50 shadow-xl">进入细胞因子目录</button>
+            </div>
+            <div className="p-10 bg-white grid md:grid-cols-2 gap-10">
+              {[
+                { n: '受体二聚化分析', d: '同源或异源受体（如 IL-2R, IL-6R）二聚化状态监测。' },
+                { n: '信号通路 IkB 降解', d: '实时监测 NF-kB 通路起始阶段的蛋白稳定性变化。' },
+                { n: '信号通路报告基因法', d: 'STAT1/3/5 等下游转录因子的多重监测。' }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 group">
+                  <div className="shrink-0 w-12 h-12 bg-teal-50 text-[#4B827E] rounded-2xl flex items-center justify-center font-black group-hover:bg-[#4B827E] group-hover:text-white transition-all shadow-sm">{i+1}</div>
+                  <div>
+                    <h5 className="font-bold text-[#1C2C5E] text-lg mb-2">{item.n}</h5>
+                    <p className="text-sm text-slate-500 leading-relaxed">{item.d}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Card 5: Comprehensive Applications */}
           <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl">
             <div className="bg-[#4B827E] p-10 text-white">
-              <h3 className="text-3xl font-black mb-2">5. 多种靶点类别的应用</h3>
+              <h3 className="text-3xl font-black mb-2">5. 其他靶点和应用</h3>
               <p className="opacity-80 font-medium">跨学科、跨靶点的工业化通用检测技术</p>
             </div>
             <div className="p-10 bg-slate-50 grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -62,16 +62,15 @@ const EnzymeDetail: React.FC = () => {
 
       {/* 3. Product List Table */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12">代表性重组酶列表 / Enzyme List</h2>
-        <div className="overflow-hidden shadow-2xl rounded-2xl border border-slate-200">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-slate-200">
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12 text-center md:text-left">代表性重组酶列表 / Enzyme List</h2>
+        <div className="flex justify-start">
+          <div className="inline-block max-w-full overflow-x-auto shadow-2xl rounded-2xl border border-slate-200">
+            <table className="divide-y divide-slate-200">
               <thead className="bg-[#4B827E] text-white">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">Category (分类)</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">Product (产品名称)</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">Description (描述)</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Applications (主要应用)</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20 whitespace-nowrap">分类</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20 whitespace-nowrap">产品名称</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">主要应用</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-slate-200">
@@ -79,7 +78,6 @@ const EnzymeDetail: React.FC = () => {
                   <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/40 transition-colors'}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-500 border-r border-slate-100">{row.category}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-100">{row.name}</td>
-                    <td className="px-6 py-4 text-sm text-slate-600 border-r border-slate-100">{row.desc}</td>
                     <td className="px-6 py-4 text-sm text-[#4B827E] font-medium">{row.app}</td>
                   </tr>
                 ))}

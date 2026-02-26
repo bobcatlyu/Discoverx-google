@@ -25,19 +25,18 @@ const PpiDetail: React.FC<PpiDetailProps> = ({ onNavigate }) => {
   ];
 
   const ProductTable = ({ data, title }: { data: any[], title: string }) => (
-    <div className="mb-12 overflow-hidden shadow-xl rounded-xl border border-slate-200">
-      <div className="bg-[#4B827E] px-6 py-4">
-        <h3 className="text-lg font-bold text-white uppercase tracking-wider">{title}</h3>
-      </div>
-      <div className="overflow-x-auto">
+    <div className="w-full mb-12">
+      <div className="w-full overflow-x-auto shadow-xl rounded-xl border border-slate-200">
+        <div className="bg-[#4B827E] px-6 py-4">
+          <h3 className="text-lg font-bold text-white uppercase tracking-wider">{title}</h3>
+        </div>
         <table className="min-w-full divide-y divide-slate-200">
           <thead className="bg-slate-50">
             <tr>
-              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500">Target / Receptor</th>
-              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500">Interacting Protein</th>
-              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500">Interaction MoA</th>
-              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500">Host Cell</th>
-              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-slate-500">Description</th>
+              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500 whitespace-nowrap">靶点 / 受体</th>
+              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500 whitespace-nowrap">相互作用蛋白</th>
+              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-slate-200 text-slate-500 whitespace-nowrap">作用机制</th>
+              <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap">宿主细胞</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-slate-200">
@@ -46,8 +45,7 @@ const PpiDetail: React.FC<PpiDetailProps> = ({ onNavigate }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-100">{row.target}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-[#4B827E] font-bold border-r border-slate-100">{row.ppi}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 italic border-r border-slate-100">{row.moa}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-600 border-r border-slate-100">{row.host}</td>
-                <td className="px-6 py-4 text-sm text-slate-600">{row.desc}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-600">{row.host}</td>
               </tr>
             ))}
           </tbody>

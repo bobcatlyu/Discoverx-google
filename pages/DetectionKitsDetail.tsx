@@ -27,31 +27,31 @@ const DetectionKitsDetail: React.FC = () => {
   ];
 
   const ProductTable = ({ data, title }: { data: any[], title: string }) => (
-    <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden mb-12">
-      <div className="bg-[#4B827E] px-6 py-4">
-        <h3 className="text-xl font-bold text-white uppercase tracking-wider">{title}</h3>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200">
-          <thead className="bg-slate-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">用途 (Usage)</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">货号 (Cat No.)</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">描述 (Description)</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">规格 (Specs)</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-slate-100">
-            {data.map((row, idx) => (
-              <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 font-medium">{row.usage}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-mono font-bold text-[#1C2C5E]">{row.cat}</td>
-                <td className="px-6 py-4 text-sm text-slate-900">{row.desc}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{row.specs}</td>
+    <div className="w-full mb-12">
+      <div className="w-full bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div className="bg-[#4B827E] px-6 py-4">
+          <h3 className="text-xl font-bold text-white uppercase tracking-wider">{title}</h3>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-slate-200">
+            <thead className="bg-slate-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">用途</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">货号</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">规格</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-slate-100">
+              {data.map((row, idx) => (
+                <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 font-medium border-r border-slate-50">{row.usage}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-mono font-bold text-[#1C2C5E] border-r border-slate-50">{row.cat}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{row.specs}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

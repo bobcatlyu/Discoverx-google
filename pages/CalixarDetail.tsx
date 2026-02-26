@@ -69,32 +69,32 @@ const CalixarDetail: React.FC = () => {
 
       {/* 3. Product Availability */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10">可提供产品 / Available Native Proteins</h2>
-        <div className="overflow-hidden shadow-2xl rounded-2xl border border-slate-200 mb-16">
-          <table className="min-w-full divide-y divide-slate-200">
-            <thead className="bg-[#4B827E] text-white">
-              <tr>
-                <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Target</th>
-                <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Family</th>
-                <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Status</th>
-                <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Description</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-slate-100">
-              {productData.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E]">{row.target}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-xs text-slate-500 font-bold">{row.family}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-xs">
-                    <span className={`px-2 py-1 rounded font-bold ${row.status === 'Available' ? 'bg-teal-50 text-[#4B827E]' : 'bg-slate-100 text-slate-500'}`}>
-                      {row.status}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-600">{row.desc}</td>
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center md:text-left">可提供产品 / Available Native Proteins</h2>
+        <div className="w-full mb-16">
+          <div className="w-full overflow-x-auto shadow-2xl rounded-2xl border border-slate-200">
+            <table className="min-w-full divide-y divide-slate-200">
+              <thead className="bg-[#4B827E] text-white">
+                <tr>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20 whitespace-nowrap">靶点</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20 whitespace-nowrap">家族</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">状态</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="bg-white divide-y divide-slate-100">
+                {productData.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-100">{row.target}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-xs text-slate-500 font-bold border-r border-slate-100">{row.family}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-xs">
+                      <span className={`px-2 py-1 rounded font-bold ${row.status === 'Available' ? 'bg-teal-50 text-[#4B827E]' : 'bg-slate-100 text-slate-500'}`}>
+                        {row.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="bg-[#4B827E] rounded-3xl p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">

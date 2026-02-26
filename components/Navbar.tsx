@@ -188,9 +188,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button 
-                  onClick={() => {
-                    if (!item.subItems) onNavigate(item.id);
-                  }} 
+                  onClick={() => onNavigate(item.id)} 
                   className={`flex items-center px-4 lg:px-6 py-4 text-sm lg:text-base font-bold uppercase tracking-wide transition-all border-b-4 whitespace-nowrap ${currentPage === item.id || activeDropdown === item.id ? 'border-white text-white' : 'border-transparent text-white/85 hover:text-white'}`}
                 >
                   {item.label}
@@ -219,12 +217,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               <div className="flex items-center justify-between">
                 <button 
                   onClick={() => {
-                    if (!item.subItems) {
-                      onNavigate(item.id);
-                      setIsMobileMenuOpen(false);
-                    } else {
-                      toggleMobileItem(item.id);
-                    }
+                    onNavigate(item.id);
+                    setIsMobileMenuOpen(false);
                   }}
                   className={`flex-grow text-left py-4 px-2 text-sm font-bold uppercase tracking-wide ${currentPage === item.id ? 'text-[#4B827E]' : 'text-slate-700'}`}
                 >
